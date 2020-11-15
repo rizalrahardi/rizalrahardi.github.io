@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>InFootball</title>
+    <meta name="description" content="Free Football Apps" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/img/icon/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/icon/96x96.png">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#21bf73">
+    <link rel="preconnect" href="https://crests.football-data.org">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Start Navigation -->
+    <div class="navbar-fixed">
+        <nav class="green darken-1" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="index.html" class="brand-logo" id="logo-container">InFootball</a>
+                <a href="index.html" class="sidenav-trigger" data-target="nav-mobile"><i class="material-icons">arrow_back</i></a>
+                <ul class="topnav right hide-on-med-and-down"></ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="nav-mobile"></ul>
+
+    <div class="container" id="body-content"></div>
+
+    <!-- floating action button -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large green" id="save">
+            <i class="large material-icons">favorite_border</i>
+        </a>
+        <a class="btn-floating btn-large green" id="delete">
+            <i class="large material-icons">favorite</i>
+        </a>
+    </div>
+
+    
+    <footer class="page-footer green darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">InFootball</h5>
+                    <p class="grey-text text-lighten-4">
+                        contains information about the Spanish league football.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Dicoding
+                <a class="grey-text text-lighten-4 right" href="https://www.dicoding.com/academies/74" target="blank">Profressive Web Apps</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/idb.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/sw_detail.js"></script>
+</body>
+
+</html>
