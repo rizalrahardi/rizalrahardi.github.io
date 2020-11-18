@@ -5,35 +5,41 @@ importScripts(
 if (workbox) console.log(`Workbox berhasil dimuat`);
 else console.log(`Workbox gagal dimuat`);
 
-workbox.precaching.precacheAndRoute([
-    { url: "/", revision: "1" },
-    { url: "/index.html", revision: "1" },
-    { url: "/nav.html", revision: "1" },
-    { url: "/css/materialize.min.css", revision: "1" },
-    { url: "/js/materialize.min.js", revision: "1" },
-    { url: "/js/nav.js", revision: "1" },
-    { url: "/manifest.json", revision: "1" },
-    { url: "/push.js", revision: "1" },
-    { url: "/detail.html", revision: "1" },
-    { url: "/pages/teams.html", revision: "1" },
-    { url: "/pages/standing.html", revision: "1" },
-    { url: "/pages/saved.html", revision: "1" },
-    { url: "/js/sw_index.js", revision: "1" },
-    { url: "/js/sw_detail.js", revision: "1" },
-    { url: "/js/idb.js", revision: "1" },
-    { url: "/js/db.js", revision: "1" },
-    { url: "/js/api.js", revision: "1" },
-    { url: "/img/slider/1.webp", revision: "1" },
-    { url: "/img/slider/2.webp", revision: "1" },
-    { url: "/img/slider/3.webp", revision: "1" },
-    { url: "/img/slider/4.webp", revision: "1" },
-    { url: "/img/icon/72x72.png", revision: "1" },
-    { url: "/img/icon/96x96.png", revision: "1" },
-    { url: "/img/icon/192x192.png", revision: "1" },
-    { url: "/img/icon/512x512.png", revision: "1" },
-    { url: "/img/icon/favicon.ico", revision: "1" },
-    { url: "https://fonts.googleapis.com/icon?family=Material+Icons", revision: "1"},
-]);
+workbox.precaching.precacheAndRoute(
+    [
+        { url: "/", revision: "1" },
+        { url: "/index.html", revision: "1" },
+        { url: "/nav.html", revision: "1" },
+        { url: "/css/materialize.min.css", revision: "1" },
+        { url: "/js/materialize.min.js", revision: "1" },
+        { url: "/js/nav.js", revision: "1" },
+        { url: "/manifest.json", revision: "1" },
+        { url: "/push.js", revision: "1" },
+        { url: "/detail.html", revision: "1" },
+        { url: "/pages/teams.html", revision: "1" },
+        { url: "/pages/standing.html", revision: "1" },
+        { url: "/pages/saved.html", revision: "1" },
+        { url: "/js/sw_index.js", revision: "1" },
+        { url: "/js/sw_detail.js", revision: "1" },
+        { url: "/js/idb.js", revision: "1" },
+        { url: "/js/db.js", revision: "1" },
+        { url: "/js/api.js", revision: "1" },
+        { url: "/img/slider/1.webp", revision: "1" },
+        { url: "/img/slider/2.webp", revision: "1" },
+        { url: "/img/slider/3.webp", revision: "1" },
+        { url: "/img/slider/4.webp", revision: "1" },
+        { url: "/img/icon/72x72.png", revision: "1" },
+        { url: "/img/icon/96x96.png", revision: "1" },
+        { url: "/img/icon/192x192.png", revision: "1" },
+        { url: "/img/icon/512x512.png", revision: "1" },
+        { url: "/img/icon/favicon.ico", revision: "1" },
+        {
+            url: "https://fonts.googleapis.com/icon?family=Material+Icons",
+            revision: "1",
+        },
+    ],
+    { ignoreUrlParametersMatching: [/.*/] }
+);
 
 workbox.routing.registerRoute(
     new RegExp("/pages/"),
@@ -76,6 +82,13 @@ workbox.routing.registerRoute(
                 maxAgeSeconds: 30 * 24 * 60 * 60,
             }),
         ],
+    })
+);
+
+workbox.routing.registerRoute(
+    /.*(?:googleapis|gstatic)\.com/,
+    workbox.strategies.staleWhileRevalidate({
+        cacheName: "material-icons",
     })
 );
 

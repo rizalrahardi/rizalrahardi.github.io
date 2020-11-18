@@ -31,7 +31,7 @@ function requestPermission() {
             }
 
             /* kita tambahkan kode untuk berlangganan pesan push melalui objek PushManager */
-
+        navigator.serviceWorker.ready.then(() => {
             if (('PushManager' in window)) {
                 navigator.serviceWorker.getRegistration().then((registration) => {
                     registration.pushManager.subscribe({
@@ -52,7 +52,7 @@ function requestPermission() {
                     });
                 });
             }
-
+        });
         });
     }
 }

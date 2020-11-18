@@ -109,6 +109,6 @@ const removeTeam = (id) => {
             }else{
                 console.error("fitur notifikasi tidak diijinkan.");
             }
-            location.reload();
+            location.replace("/#teams");
         })
 };
