@@ -33,10 +33,6 @@ workbox.precaching.precacheAndRoute(
         { url: "/img/icon/192x192.png", revision: "1" },
         { url: "/img/icon/512x512.png", revision: "1" },
         { url: "/img/icon/favicon.ico", revision: "1" },
-        {
-            url: "https://fonts.googleapis.com/icon?family=Material+Icons",
-            revision: "1",
-        },
     ],
     { ignoreUrlParametersMatching: [/.*/] }
 );
