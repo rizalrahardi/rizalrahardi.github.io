@@ -153,7 +153,7 @@ const showAllTeam = (data) => {
                 <a href="./detail.html?id=${team.id}" style="color:black;">
                     <div class="col s12 m3 " style="float: center; height: 25rem; margin: 0; padding: 5px; ">
                         <div class="card">
-                            <div class="card-image" style="height : 13rem;">
+                            <div class="card-image" style="height : 13rem; border-radius : 0 25px 0 25px">
                             <img src="${team.crestUrl}" alt="Team Banner" style="margin: auto; padding: 1rem 1rem 0 1rem; height: 100%; width:auto; max-width: 100%; ">
                             </div>
                             <div class="card-content" style="text-align: center; padding-top: 0.5rem; height : 6rem;">
@@ -249,7 +249,7 @@ const getSavedTeams = () => {
                     }&saved=true" style="color:black;">
                         <div class="col s12 m3 " style="float: center; height: 25rem; margin: 0; padding: 5px; ">
                             <div class="card">
-                                <div class="card-image" style="height: 13rem;">
+                                <div class="card-image" style="height: 13rem; border-radius: 0 25px 0 25px">
                                 <img src="${team.crestUrl.replace(
                                     /^http:\/\//i,
                                     "https://"
